@@ -43,10 +43,10 @@ func main() {
 	// Command line arguments
 	addr := flag.String("listen-address", ":8080", "The address to listen on for HTTP requests.")
 	updateInterval := flag.Int("update-interval", 15, "Update interval in seconds.")
-	ipAddressesArgument := flag.String("ips", "", "List of ip addresses to monitor, comma seperated")
+	ipAddressesArgument := flag.String("ips", "", "List of ip addresses to monitor, comma separated")
 	flag.Parse()
 
-	// Parse the IP addresess
+	// Parse the IP addresses
 	ipAddresses := strings.Split(*ipAddressesArgument, ",")
 	if len(ipAddresses) == 0 || *ipAddressesArgument == "" {
 		log.Printf("You must at least specify one IP address")
@@ -62,7 +62,7 @@ func main() {
 	// Setup the iptables
 	iptablesSetup(ipAddresses)
 
-	// Create a registery for prometheus
+	// Create a registry for prometheus
 	reg := prometheus.NewRegistry()
 
 	// Create new metrics and register them using the custom registry.

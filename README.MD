@@ -9,7 +9,7 @@ You only need to specify the addresses which you willing to monitor their upload
 ```
 Usage of iptables-exporter:
   -ips string
-        List of ip addresses to monitor, comma seperated
+        List of ip addresses to monitor, comma separated
   -listen-address string
         The address to listen on for HTTP requests. (default ":8080")
   -update-interval int

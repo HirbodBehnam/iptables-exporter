@@ -10,7 +10,7 @@ import (
 	"strings"
 )
 
-// Execute a iptables command in the mangle table and fataly exit the application
+// Execute a iptables command in the mangle table and fatally exit the application
 // if it fails
 func iptablesExecute(args ...string) {
 	// iptables must be ran in the mangle table
@@ -28,7 +28,7 @@ func iptablesExecute(args ...string) {
 
 // Setup the rules which monitor the traffic of each client.
 // Will exit the program if any of the commands fail.
-// The arugment is a list of IP addresses which will be monitored.
+// The argument is a list of IP addresses which will be monitored.
 func iptablesSetup(ips []string) {
 	// Check if chains exist
 	if exec.Command("iptables", "-t", "mangle", "-n", "--list", "POST_COUNTER").Run() != nil {
